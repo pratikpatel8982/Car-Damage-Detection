@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Car Damage Detection – YOLOv12</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Car Damage Detection (YOLOv12)</h1>
+
+    <!-- Unified Upload Box -->
+    <div class="upload-box" id="drop-area" tabindex="0" role="button" aria-label="Upload image or video">
+        <p id="upload-helper">Drag & drop an image or video here<br>or click to browse</p>
+        <input type="file" id="file-input" accept="image/*,video/*" hidden>
+        <div class="small-note">Supported: .jpg .png .mp4 .mov .avi</div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="buttons-row">
+        <button id="detect-btn" class="action-btn" disabled>Run Image Detection</button>
+        <button id="video-detect-btn" class="action-btn" disabled>Run Video Detection</button>
+    </div>
+
+    <!-- Loader / Status -->
+    <div id="status-row" class="status-row hidden">
+        <div class="spinner" id="spinner" aria-hidden="true"></div>
+        <div id="status-text">Processing...</div>
+    </div>
+
+    <!-- Previews -->
+    <div class="preview-section">
+        <div class="preview-card">
+            <h3>Original</h3>
+            <img id="original-img" class="preview-media hidden" alt="Original image preview">
+            <video id="original-video" class="preview-media hidden" controls></video>
+        </div>
+
+        <div class="preview-card">
+            <h3>Processed</h3>
+            <img id="result-img" class="preview-media hidden" alt="Processed image">
+            <video id="result-video" class="preview-media hidden" controls></video>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-panel">
+        <h3>Detection Summary</h3>
+        <div id="summary-list"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
